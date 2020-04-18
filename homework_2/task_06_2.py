@@ -24,6 +24,8 @@ for i in range(goods_number):
     good = (i + 1), good_props
     catalog.append(good)
 print(catalog)
+# Извиняюсь, что цена и количество строкой. Чтобы свойства имели разный тип, пришлось бы отказаться от
+# такого классного цикла и описывать 4 ввода отдельно.
 
 analytics = {}
 for prop_num in range(len(properties)):

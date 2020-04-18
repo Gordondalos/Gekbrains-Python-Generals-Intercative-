@@ -1,3 +1,3 @@
-cat = {'название': 'сканер', 'цена': 2000, 'количество': 7, 'ед': 'шт'}
-print(cat.get('название'))
-print(cat.get('ед'))
+properties = {'название': 'str', 'цена': 'int', 'количество': 'int', 'единицы': 'str'}
+
+print(list(properties.values())[0])
