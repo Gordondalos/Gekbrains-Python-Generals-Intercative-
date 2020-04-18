@@ -17,20 +17,21 @@ for i in range(goods_number):
     good_props = {}
     for prop_num in range(len(properties)):
         prop_name = str(list(properties.keys())[prop_num])
-        if list(properties.values())[prop_num] == 'str':
-            good_props[prop_name] = input(f'Введите {prop_name} {i + 1} товара: ')
-        elif list(properties.values())[prop_num] == 'int':
-            good_props[prop_name] = int(input(f'Введите {prop_name} {i + 1} товара: '))
+        prop_type = list(properties.values())[prop_num]
+        good_props[prop_name] = input(f'Введите {prop_name} {i + 1} товара: ')
+        if prop_type == 'int':
+            good_props[prop_name] = int(good_props[prop_name])
     good = (i + 1), good_props
     catalog.append(good)
 print(catalog)
 
 analytics = {}
 for prop_num in range(len(properties)):
-    analytics[str(list(properties.keys())[prop_num])] = 0
+    prop = str(list(properties.keys())[prop_num])
+    analytics[prop] = 0
     lst = []
     for good in range(goods_number):
-        lst.append(catalog[good][1].get(str((list(properties.keys())[prop_num]))))
-    analytics[str((list(properties.keys())[prop_num]))] = list(set(lst))
+        lst.append(catalog[good][1].get(prop))
+    analytics[prop] = list(set(lst))
 
 print(analytics)
