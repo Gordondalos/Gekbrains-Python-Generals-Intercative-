@@ -7,15 +7,11 @@
 
 def fact(n):
     # Функция получения факториала числа
-    # На выходе - генератор списка 1!, 2!, 3! и так далее
 
-    lst = []
     cur = 1
     for i in range(1, n + 1):
         cur *= i
-        lst.append(cur)
-    yield lst
+        yield cur
 
 
-for el in fact(4):
-    print(el)
+print([el for el in fact(4)])
