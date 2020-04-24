@@ -8,7 +8,10 @@ from sys import argv
 
 def salary(hours, cost, prize):
     # Функция определения зарплаты
-    return int(hours) * int(cost) + int(prize)
+    try:
+        return int(hours) * int(cost) + int(prize)
+    except ValueError:
+        return "Arguments must be numbers!"
 
 
 script, hours, cost, prize = argv
